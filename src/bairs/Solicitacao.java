@@ -25,7 +25,11 @@ public class Solicitacao {
         this.Categoria = Categoria;
     }
 
-
+    public void fazerSolicitacao(){
+        Solicitacao pedido = new Solicitacao();
+        pedido.setDescricao(Descricao);
+        pedido.setCategoria(Categoria);
+    }
  
     
     
