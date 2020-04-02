@@ -1,15 +1,21 @@
 
 package bairs;
 
-import java.util.List;
+
+
 import java.util.Random;
 
 
 public class Solicitacao {
     private Random ID = new Random();
     private String Descricao;
-    private List <String> Categoria;
-    
+    private String Categoria;
+
+    public Solicitacao(String Descricao, String Categoria) {
+        this.Descricao = Descricao;
+        this.Categoria = Categoria;
+    }   
+   
     public Random getID() {
          ID.nextInt(100);
         return ID;
@@ -27,25 +33,19 @@ public class Solicitacao {
         this.Descricao = Descricao;
     }
 
-    public List <String> getCategoria() {
+    public String getCategoria() {
         return Categoria;
     }
 
-    public void setCategoria(List <String> Categoria) {
+    public void setCategoria(String Categoria) {
         this.Categoria = Categoria;
     }
 
     public void fazerSolicitacao(){
-        Solicitacao pedido = new Solicitacao();
-        pedido.setID(ID);
-        pedido.setDescricao(Descricao);
-        pedido.setCategoria(Categoria);
-    }
- 
+        
+     
     public void cancelarSolicitacao(){
         
     }
 
-    
-    
 }
