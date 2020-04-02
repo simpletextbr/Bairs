@@ -3,6 +3,7 @@ package bairs;
 
 
 
+import java.util.List;
 import java.util.Random;
 
 
@@ -15,6 +16,10 @@ public class Solicitacao {
         this.Descricao = Descricao;
         this.Categoria = Categoria;
     }   
+
+    private Solicitacao() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     public Random getID() {
          ID.nextInt(100);
@@ -42,10 +47,10 @@ public class Solicitacao {
     }
 
     public void fazerSolicitacao(){
-        
-     
-    public void cancelarSolicitacao(){
-        
-    }
-
+        Solicitacao pedido = new Solicitacao();
+        pedido.setID(ID);
+        pedido.setDescricao(Descricao);
+        pedido.setCategoria(Categoria);
+    } 
+    
 }
