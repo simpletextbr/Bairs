@@ -15,7 +15,14 @@ public class Anuncio {
      private String description;
      private Double price;
      private String category;
-
+     
+     public Anuncio(String name, String description, Double price, String category) {
+        setName(name);
+        setDescription(description);
+        setPrice(price);
+        setCategory(category);
+    }
+     
     /**
      * @return the name
      */
