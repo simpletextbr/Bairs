@@ -23,6 +23,21 @@ public class Anuncio {
         setCategory(category);
     }
      
+     public String Anunciar() {
+        String status = "";
+        String name = getName();
+        String description = getDescription();
+        Double price = getPrice();
+        String category = getCategory();
+
+        if (!name.equals("") && !description.equals("") && price >= 0 && !category.equals("")) {
+            status = ("Sucefull");
+        } else {
+            status = ("Failed");
+        }
+        return status;
+    }
+     
     /**
      * @return the name
      */
