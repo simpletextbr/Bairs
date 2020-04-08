@@ -46,10 +46,14 @@ public class Solicitation{
     }
 
     public void doSolicitation(){
-        Solicitacao pedido = new Solicitacao();
+        Solicitation pedido = new Solicitation();
         pedido.setID(ID);
-        pedido.setDescricao(Description);
-        pedido.setCategoria(Category);
+        pedido.setDescription(Description);
+        pedido.setCategory(Category);
+        
+        if(Description.equals("") || Category.equals("")){
+            System.out.println("Você precisa preencher todos os campos");
+        }
     }
     public void doCancel(){
         
