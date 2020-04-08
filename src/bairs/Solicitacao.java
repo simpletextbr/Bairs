@@ -51,6 +51,9 @@ public class Solicitacao {
         pedido.setID(ID);
         pedido.setDescricao(Descricao);
         pedido.setCategoria(Categoria);
-    } 
+    }
+    public void fazerCancelamento(){
+        
+    }
     
 }
