@@ -49,6 +49,12 @@ public class Anuncio {
      * @param name the name to set
      */
     public void setName(String name) {
+        if (name.trim().equals("") || name.equals("")) {
+            throw new IllegalArgumentException("You must enter a name");
+        }
+        if (name.length() < 5) {
+            throw new IllegalArgumentException("That name is small");
+        }
         this.name = name;
     }
 
