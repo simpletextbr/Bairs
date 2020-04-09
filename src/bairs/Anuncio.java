@@ -5,6 +5,8 @@
  */
 package bairs;
 
+import java.util.Objects;
+
 /**
  *
  * @author Bruno & Lud
@@ -36,6 +38,38 @@ public class Anuncio {
             status = ("Failed");
         }
         return status;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.name);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Anuncio other = (Anuncio) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return true;
+    }
+     
+     
+
+    @Override
+    public String toString() {
+        return "Anuncio{" + "name=" + name + ", description=" + description + ", price=" + price + ", category=" + category + '}';
     }
      
     /**

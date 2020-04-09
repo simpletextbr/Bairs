@@ -6,17 +6,17 @@ package bairs;
 import java.util.Random;
 
 
-public class Solicitation{
+public class Solicitacao{
     private Random ID = new Random();
     private String Description;
     private String Category;
 
-    public Solicitation(String Descricao, String Categoria) {
+    public Solicitacao(String Descricao, String Categoria) {
         this.Description = Description;
         this.Category = Category;
     }   
 
-    private Solicitation() {
+    private Solicitacao() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
@@ -45,8 +45,8 @@ public class Solicitation{
         this.Category = Category;
     }
 
-    public void doSolicitation(){
-        Solicitation pedido = new Solicitation();
+    public void FazerSolicitation(){
+        Solicitacao pedido = new Solicitacao();
         pedido.setID(ID);
         pedido.setDescription(Description);
         pedido.setCategory(Category);
@@ -55,7 +55,7 @@ public class Solicitation{
             System.out.println("Você precisa preencher todos os campos");
         }
     }
-    public void doCancel(){
+    public void FazerCancelamento(){
         
     }
     
