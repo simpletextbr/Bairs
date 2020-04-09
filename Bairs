@@ -1,0 +1,6 @@
+tree 25d9edf6959b4a8878612ea343bd76d3f4bfac6c
+parent 2d8c843517aa0b274730b9ba7bad7322d5811a38
+author simpletextbr <simpletextbr@gmail.com> 1585781797 -0300
+committer simpletextbr <simpletextbr@gmail.com> 1585781797 -0300
+
+Fix: Remove duplicate folder
