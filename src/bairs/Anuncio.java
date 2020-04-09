@@ -85,7 +85,10 @@ public class Anuncio {
     /**
      * @param price the price to set
      */
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Negative value is not accepted");
+        }
         this.price = price;
     }
 
