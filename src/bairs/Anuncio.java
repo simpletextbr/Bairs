@@ -69,6 +69,9 @@ public class Anuncio {
      * @param description the description to set
      */
     public void setDescription(String description) {
+        if (description.trim().length() > 500) {
+            throw new IndexOutOfBoundsException("caracters limit is 500");
+        }
         this.description = description;
     }
 
