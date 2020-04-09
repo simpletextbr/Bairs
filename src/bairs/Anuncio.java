@@ -49,6 +49,12 @@ public class Anuncio {
      * @param name the name to set
      */
     public void setName(String name) {
+        if (name.trim().equals("") || name.equals("")) {
+            throw new IllegalArgumentException("You must enter a name");
+        }
+        if (name.length() < 5) {
+            throw new IllegalArgumentException("That name is small");
+        }
         this.name = name;
     }
 
@@ -63,6 +69,9 @@ public class Anuncio {
      * @param description the description to set
      */
     public void setDescription(String description) {
+        if (description.trim().length() > 500) {
+            throw new IndexOutOfBoundsException("caracters limit is 500");
+        }
         this.description = description;
     }
 
@@ -76,7 +85,10 @@ public class Anuncio {
     /**
      * @param price the price to set
      */
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Negative value is not accepted");
+        }
         this.price = price;
     }
 
