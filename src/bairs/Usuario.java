@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bairs.modelo;
+package bairs;
 
 import java.util.Calendar;
 
@@ -20,7 +20,7 @@ public class Usuario {
     private String senha;
     private Double codigoVerificacao;
 
-    public void cadastrarUsuario(String nomeCompleto, Double CPF, Calendar dataNascimento, String email, String usuario, String senha) {
+     public void cadastrarUsuario(String nomeCompleto, Double CPF, Calendar dataNascimento, String email, String usuario, String senha) {
         this.nomeCompleto = nomeCompleto;
         this.CPF = CPF;
         this.dataNascimento = dataNascimento;
@@ -28,8 +28,7 @@ public class Usuario {
         this.usuario = usuario;
         this.senha = senha;
     }
-    public String entrar(String usuario, String senha)
-{
+     public String entrar(String usuario, String senha){
         if(this.usuario.equals(usuario) && this.senha.equals(senha))
             return "Sucesso";
         else
@@ -47,9 +46,7 @@ public class Usuario {
         else
             return "Usuario ou senha incorretos";
     }
-
-
-   public void excluir(Double CPF) throws Exception{
+     public void excluir(Double CPF) throws Exception{
        int uPosicao= -1;
         int p = -1;
         if (uPosicao == -1)
