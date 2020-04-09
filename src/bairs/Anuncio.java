@@ -5,7 +5,7 @@
  */
 package bairs;
 
-import bairs.modelo.Usuario;
+import bairs.Usuario;
 import java.util.Objects;
 
 /**
