@@ -60,6 +60,9 @@ public class Usuario {
         if (p==-1)
             throw new Exception("Elemento não encontrado");   
         --uPosicao;
-         }   
+         } 
+     public void recuperarSenha(){}
+     public void enviarEmail(){}
+     public void verificarCodigo(){}
 }
 
