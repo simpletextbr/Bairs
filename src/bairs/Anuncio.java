@@ -5,14 +5,15 @@
  */
 package bairs;
 
+import bairs.modelo.Usuario;
 import java.util.Objects;
 
 /**
  *
- * @author Bruno & Lud
+ * @author Gabriel Bryan
  */
 public class Anuncio {
-    
+     private Usuario user;
      private String name;
      private String description;
      private Double price;
@@ -64,8 +65,6 @@ public class Anuncio {
         }
         return true;
     }
-     
-     
 
     @Override
     public String toString() {
