@@ -6,31 +6,39 @@
 package bairs.modelo;
 
 import java.util.Objects;
+import java.util.Random;
 
 /**
  *
  * @author Dênis
  */
 public class Feedback {
-
-    private String titulo;
+    
+    private Random ID = new Random();
+    private Integer avaliacao;
     private String comentario;
 
     //Metodo construtor
-    public Feedback(String titulo, String comentario) {
-        this.titulo = titulo;
+    public Feedback(Integer avaliacao, String comentario) {
+        this.ID = getID();
+        this.avaliacao = avaliacao;
         this.comentario = comentario;
+    }
+    
+    public Random getID() {
+         ID.nextInt(100);
+        return ID;
     }
 
     @Override
     public String toString() {
-        return "Feedback{" + "titulo=" + titulo + ", comentario=" + comentario + '}';
+        return "Feedback{" + "comentario=" + comentario + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 47 * hash + Objects.hashCode(this.titulo);
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.comentario);
         return hash;
     }
 
@@ -46,24 +54,24 @@ public class Feedback {
             return false;
         }
         final Feedback other = (Feedback) obj;
-        if (!Objects.equals(this.titulo, other.titulo)) {
+        if (!Objects.equals(this.comentario, other.comentario)) {
             return false;
         }
         return true;
     }
-
+    
     /**
-     * @return the titulo
+     * @return the avaliacao
      */
-    public String getTitulo() {
-        return titulo;
+    public Integer getAvaliacao() {
+        return avaliacao;
     }
 
     /**
-     * @param titulo the titulo to set
+     * @param avaliacao the avaliacao to set
      */
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitulo(Integer avaliacao) {
+        this.avaliacao = avaliacao;
     }
 
     /**
@@ -80,7 +88,9 @@ public class Feedback {
         this.comentario = comentario;
     }
 
-    public void aplicarFeedback(String feedback) {
-        String guardaFeedback = feedback;
+    public void aplicarFeedback(Integer avaliacao, String comentario ) {
+        
+        Feedback aplicaFeedback = new Feedback(avaliacao,comentario);
+        
     }
 }
