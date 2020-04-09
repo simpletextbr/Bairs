@@ -37,11 +37,6 @@ public class Anuncio {
         }
         return status;
     }
-
-    @Override
-    public String toString() {
-        return "Anuncio{" + "name=" + name + ", description=" + description + ", price=" + price + ", category=" + category + '}';
-    }
      
     /**
      * @return the name
