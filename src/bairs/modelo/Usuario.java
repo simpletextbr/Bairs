@@ -29,7 +29,7 @@ public class Usuario {
         this.senha = senha;
     }
     public String entrar(String usuario, String senha)
-  {
+{
         if(this.usuario.equals(usuario) && this.senha.equals(senha))
             return "Sucesso";
         else
@@ -47,7 +47,22 @@ public class Usuario {
         else
             return "Usuario ou senha incorretos";
     }
-}
 
- 
+
+   public void excluir(Double CPF) throws Exception{
+       int uPosicao= -1;
+        int p = -1;
+        if (uPosicao == -1)
+            throw new Exception ("Lista Vazia");
+        for (int i=0;i<=uPosicao;++i){
+            if (this.CPF == CPF){
+                p=i;
+                break;
+            }
+        }
+        if (p==-1)
+            throw new Exception("Elemento não encontrado");   
+        --uPosicao;
+         }   
+}
 
