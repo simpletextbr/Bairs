@@ -5,7 +5,6 @@
  */
 package bairs;
 
-import bairs.Usuario;
 import java.util.Objects;
 
 /**
@@ -18,7 +17,8 @@ public class Anuncio {
      private String description;
      private Double price;
      private String category;
-     
+     private Impulsionamento boost;
+     private Chat chat;
      public Anuncio(String name, String description, Double price, String category) {
         setName(name);
         setDescription(description);
@@ -40,7 +40,7 @@ public class Anuncio {
         }
         return status;
     }
-
+     
     @Override
     public int hashCode() {
         int hash = 7;
