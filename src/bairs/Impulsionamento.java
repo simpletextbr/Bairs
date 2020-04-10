@@ -13,6 +13,15 @@ public class Impulsionamento {
     private String nomenclatura;
     private String duracao;
     private String desconto;
+    
+    public Impulsionamento basico(){
+        Impulsionamento basico = new Impulsionamento();
+        basico.nomenclatura = "Básico";
+        basico.duracao = "8 dias";
+        basico.desconto = "10%";
+    
+        return basico;   
+}
 
     /**
      * @return the nomenclatura
