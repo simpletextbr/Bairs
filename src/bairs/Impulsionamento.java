@@ -22,6 +22,15 @@ public class Impulsionamento {
     
         return basico;   
 }
+    
+    public Impulsionamento premium(){
+        Impulsionamento premium = new Impulsionamento();
+        premium.nomenclatura = "Premium";
+        premium.duracao = "14 dias";
+        premium.desconto = "15%";
+        
+        return premium;
+    }
 
     /**
      * @return the nomenclatura
