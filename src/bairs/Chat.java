@@ -10,6 +10,9 @@ package bairs;
  * @author luana
  */
 public class Chat {
-
+    
+    public void fecharNegocio(){
+        
+    }
 }
 
