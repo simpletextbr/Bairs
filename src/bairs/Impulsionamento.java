@@ -32,6 +32,11 @@ public class Impulsionamento {
         return premium;
     }
 
+    @Override
+    public String toString() {
+        return "Impulsionamento "+ nomenclatura +" "+ desconto +" "+ duracao;
+    }
+
     /**
      * @return the nomenclatura
      */
