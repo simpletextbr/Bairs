@@ -10,8 +10,52 @@ package bairs;
  * @author luana
  */
 public class Impulsionamento {    
-    String nomenclatura;
-    String duracao;
-    String desconto;
+    private String nomenclatura;
+    private String duracao;
+    private String desconto;
+
+    /**
+     * @return the nomenclatura
+     */
+    public String getNomenclatura() {
+        return nomenclatura;
+    }
+
+    /**
+     * @param nomenclatura the nomenclatura to set
+     */
+    public void setNomenclatura(String nomenclatura) {
+        this.nomenclatura = nomenclatura;
+    }
+
+    /**
+     * @return the duracao
+     */
+    public String getDuracao() {
+        return duracao;
+    }
+
+    /**
+     * @param duracao the duracao to set
+     */
+    public void setDuracao(String duracao) {
+        this.duracao = duracao;
+    }
+
+    /**
+     * @return the desconto
+     */
+    public String getDesconto() {
+        return desconto;
+    }
+
+    /**
+     * @param desconto the desconto to set
+     */
+    public void setDesconto(String desconto) {
+        this.desconto = desconto;
+    }
     
 }
+
+
