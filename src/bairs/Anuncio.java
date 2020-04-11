@@ -6,40 +6,42 @@
 package bairs;
 
 import java.util.Objects;
-import java.util.Scanner;
+
 
 /**
  *
  * @author Gabriel Bryan
  */
 public class Anuncio {
-     private Usuario user;
-     private String name;
-     private String description;
-     private Double price;
-     private String category;
-     private Impulsionamento boost;
-     private Chat chat;
-     
-     public Anuncio(String name, String description, Double price, String category) {
+
+    private Usuario user;
+    private String name;
+    private String description;
+    private Double price;
+    private String category;
+    private Impulsionamento boost;
+    private Chat chat;
+
+    public Anuncio(String name, String description, Double price, String category) {
         setName(name);
         setDescription(description);
         setPrice(price);
         setCategory(category);
         boost = new Impulsionamento();
     }
-     
-     public String impulsionar(String opt){
-         String response = "";
-         if(opt.equals("b")){
-            response = boost.basico().toString(); 
-         }
-         if(opt.equals("p")){
+
+    public String impulsionar(String opt) {
+        String response = "";
+        if (opt.equals("b")) {
+            response = boost.basico().toString();
+        }
+        if (opt.equals("p")) {
             response = boost.premium().toString();
-         }
-         return response;
-     }
-     public String Anunciar() {
+        }
+        return response;
+    }
+
+    public String Anunciar() {
         String status = "";
         String name = getName();
         String description = getDescription();
@@ -47,10 +49,8 @@ public class Anuncio {
         String category = getCategory();
 
         if (!name.equals("") && !description.equals("") && price >= 0 && !category.equals("")) {
-            status = ("Sucefull");
-        } else {
-            status = ("Failed");
-        }
+           status = ("Sucefull");
+        } 
         return status;
     }
 
@@ -83,7 +83,7 @@ public class Anuncio {
     public String toString() {
         return "Anuncio{" + "name=" + name + ", description=" + description + ", price=" + price + ", category=" + category + '}';
     }
-     
+
     /**
      * @return the name
      */
@@ -151,5 +151,5 @@ public class Anuncio {
     public void setCategory(String category) {
         this.category = category;
     }
-    
+
 }
