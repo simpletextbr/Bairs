@@ -26,6 +26,7 @@ public class Anuncio {
         setDescription(description);
         setPrice(price);
         setCategory(category);
+        boost = new Impulsionamento();
     }
      
      public String impulsionar(String opt){
