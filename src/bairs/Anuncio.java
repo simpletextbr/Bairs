@@ -40,7 +40,7 @@ public class Anuncio {
         return response;
     }
 
-    public String Anunciar() {
+    public String anunciar() {
         String status = "";
         String name = getName();
         String description = getDescription();
