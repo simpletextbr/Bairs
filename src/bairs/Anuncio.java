@@ -49,7 +49,9 @@ public class Anuncio {
         String category = getCategory();
 
         if (!name.equals("") && !description.equals("") && price >= 0 && !category.equals("")) {
-           status = ("Sucefull");
+            Anuncio newa = new Anuncio(name, description, price, category);
+            String response = newa.toString();
+            status = ("Sucefull " + response);
         } 
         return status;
     }
