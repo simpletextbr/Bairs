@@ -7,7 +7,6 @@ package bairs;
 
 import java.util.Objects;
 
-
 /**
  *
  * @author Gabriel Bryan
@@ -52,8 +51,11 @@ public class Anuncio {
             Anuncio newa = new Anuncio(name, description, price, category);
             String response = newa.toString();
             status = ("Sucefull " + response);
-        } 
+        }
         return status;
+    }
+
+    public void negociar() {
     }
 
     @Override
