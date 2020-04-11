@@ -6,6 +6,7 @@
 package bairs;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  *
@@ -19,6 +20,7 @@ public class Anuncio {
      private String category;
      private Impulsionamento boost;
      private Chat chat;
+     
      public Anuncio(String name, String description, Double price, String category) {
         setName(name);
         setDescription(description);
@@ -26,6 +28,16 @@ public class Anuncio {
         setCategory(category);
     }
      
+     public String impulsionar(String opt){
+         String response = "";
+         if(opt.equals("b")){
+            response = boost.basico().toString(); 
+         }
+         if(opt.equals("p")){
+            response = boost.premium().toString();
+         }
+         return response;
+     }
      public String Anunciar() {
         String status = "";
         String name = getName();
@@ -40,7 +52,7 @@ public class Anuncio {
         }
         return status;
     }
-     
+
     @Override
     public int hashCode() {
         int hash = 7;
