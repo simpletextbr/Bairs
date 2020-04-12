@@ -56,6 +56,7 @@ public class Anuncio {
     }
 
     public void negociar() {
+        Chat open = new Chat();
     }
 
     @Override
