@@ -20,9 +20,10 @@ public class Feedback {
 
     //Metodo construtor
     public Feedback(Integer avaliacao, String comentario) {
-        this.ID = getID();
-        this.avaliacao = avaliacao;
-        this.comentario = comentario;
+        getID();
+        setAvaliacao(avaliacao);
+        setComentario(comentario);
+        
     }
     
     public Random getID() {
@@ -70,7 +71,11 @@ public class Feedback {
     /**
      * @param avaliacao the avaliacao to set
      */
-    public void setTitulo(Integer avaliacao) {
+    public void setAvaliacao(Integer avaliacao) {
+        
+        if (avaliacao < 1 || avaliacao > 5 ) {
+            throw new IndexOutOfBoundsException("Avaliação permitida: 1 a 5");
+        }
         this.avaliacao = avaliacao;
     }
 
@@ -85,6 +90,14 @@ public class Feedback {
      * @param comentario the comentario to set
      */
     public void setComentario(String comentario) {
+        
+        if (comentario.trim().length() <5) {
+            throw new IndexOutOfBoundsException("Digite pelo menos 5 caracteres");
+        }
+        
+        if (comentario.trim().length() > 500) {
+            throw new IndexOutOfBoundsException("Limite de 500 caracteres");
+        }
         this.comentario = comentario;
     }
 
