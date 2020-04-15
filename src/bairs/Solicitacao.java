@@ -11,7 +11,7 @@ public class Solicitacao{
     private String Description;
     private String Category;
 
-    public Solicitacao(String Descricao, String Categoria) {
+    public Solicitacao(Random ID1, String Descricao, String Categoria) {
         this.Description = Description;
         this.Category = Category;
     }   
@@ -46,11 +46,11 @@ public class Solicitacao{
     }
 
     public void FazerSolicitation(){
-        Solicitacao pedido = new Solicitacao();
-        pedido.setID(ID);
-        pedido.setDescription(Description);
-        pedido.setCategory(Category);
-        
+        Solicitacao pedido = new Solicitacao(ID, Description, Category);
+//        pedido.setID(ID);
+//        pedido.setDescription(Description);
+//        pedido.setCategory(Category);
+//        
         if(Description.equals("") || Category.equals("")){
             System.out.println("Você precisa preencher todos os campos");
         }
