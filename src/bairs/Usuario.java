@@ -9,7 +9,7 @@ import java.util.Calendar;
 
 /**
  *
- * @author CLIENTE
+ * @author Thiago
  */
 public class Usuario {
     private String nomeCompleto;
