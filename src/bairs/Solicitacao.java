@@ -7,33 +7,64 @@ import java.util.Random;
 
 
 public class Solicitacao{
-    private Random ID = new Random();
+    private Random r = new Random();
+    private Integer ID;
+    private String Name;
     private String Description;
     private String Category;
 
-    public Solicitacao(Random ID1, String Descricao, String Categoria) {
+    public Solicitacao(Integer ID, String Name ,String Description, String Category) {
+        this.ID = ID;
+        this.Name = Name;
         this.Description = Description;
         this.Category = Category;
-    }   
-
-    private Solicitacao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   
-    public Random getID() {
-         ID.nextInt(100);
+    
+    public Solicitacao() {
+    }
+    
+ 
+    /**
+     * @return the ID
+     */
+    public Integer getID() {
         return ID;
     }
 
-    public void setID(Random ID) {
-        this.ID = ID;
+    /**
+     * 
+     */
+    public Integer setID() {
+        ID = r.nextInt(100);
+        return ID;
+    }
+
+    @Override
+    public String toString() {
+        return "Solicitacao: { " + "ID da Solicitação: " + ID + ", Nome da Solicitaçao: " + Name +  ", Descrição da Solicitaçao: " + Description + ", Categoria da Solicitação: " + Category + '}';
     }
     
+    
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return Name;
+    }
+
+    /**
+     * @param Name the name to set
+     */
+    public void setName(String Name) {
+        this.Name = Name;
+    }
+    
+
     public String getDescription() {
         return Description;
     }
 
-       public void setDescription(String Descricao) {
+       public void setDescription(String Description) {
         this.Description = Description;
     }
 
@@ -41,22 +72,33 @@ public class Solicitacao{
         return Category;
     }
 
-    public void setCategory(String Categoria) {
+    public void setCategory(String Category) {
         this.Category = Category;
     }
 
-    public void FazerSolicitation(){
-        Solicitacao pedido = new Solicitacao(ID, Description, Category);
-//        pedido.setID(ID);
-//        pedido.setDescription(Description);
-//        pedido.setCategory(Category);
-//        
-        if(Description.equals("") || Category.equals("")){
-            System.out.println("Você precisa preencher todos os campos");
+    public String DoSolicitation(){
+            Integer ID = getID();
+            String Name = getName();
+            String Description = getDescription();
+            String Category = getCategory();
+            String status = "";
+            
+            Solicitacao pedido = new Solicitacao(ID, Name, Description, Category);
+      if(Description.equals("".trim()) || Category.equals("".trim()) || Name.equals("".trim())){
+          System.out.println("Você precisa preencher todos os campos");
+          status="Failed";
+          return status;
         }
-    }
-    public void FazerCancelamento(){
+      
+        status=pedido.toString();
+     
+      return status;
+
+  }     
+    public void DoCancel(){
         
     }
+
+
     
 }
