@@ -20,9 +20,15 @@ public class ImpulsionamentoTest {
     }
     
     @Test
-    public void Impulsinamento() {
+    public void ImpulsinamentoBasico() {
         Impulsionamento impul = new Impulsionamento();
         System.out.println(impul.basico());
+            
+}
+    @Test
+    public void ImpulsinamentoPremium() {
+        Impulsionamento impul = new Impulsionamento();
+        System.out.println(impul.premium());
             
 }
     
