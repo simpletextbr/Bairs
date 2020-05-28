@@ -23,7 +23,11 @@ public class ImpulsionamentoTest {
     public void ImpulsinamentoBasico() {
         Impulsionamento impul = new Impulsionamento();
         System.out.println(impul.basico());
-            
+        
+        Impulsionamento result = impul.basico();
+        String expResult = "Impulsionamento " + "Básico" + " " + "10%" + " " + "8 dias"; 
+        assertEquals(expResult, result);
+     
 }
     @Test
     public void ImpulsinamentoPremium() {
