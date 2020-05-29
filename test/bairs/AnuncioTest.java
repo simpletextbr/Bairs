@@ -28,5 +28,7 @@ public class AnuncioTest {
      String description = "Computador bem velho para retirada de peças";
      Double price = 150.00;
      String category = "Informatica";
+        Anuncio PC = new Anuncio(name, description, price, category);
+        PC.anunciar();
     }
 }
