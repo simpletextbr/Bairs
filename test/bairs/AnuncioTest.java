@@ -29,8 +29,9 @@ public class AnuncioTest {
      Double price = 150.00;
      String category = "Informatica";
         Anuncio PC = new Anuncio(name, description, price, category);
-        System.out.println(PC.anunciar());
-        System.out.println(PC.impulsionar("b"));
+        String resultado = PC.anunciar();
+        String esperado = "Sucefull " + "Anuncio{" + "name=" + name + ", description=" + description + ", price=" + price + ", category=" + category + '}';
+        assertEquals(esperado, resultado );
         
     }
 }
