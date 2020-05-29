@@ -29,6 +29,8 @@ public class AnuncioTest {
      Double price = 150.00;
      String category = "Informatica";
         Anuncio PC = new Anuncio(name, description, price, category);
-        PC.anunciar();
+        System.out.println(PC.anunciar());
+        System.out.println(PC.impulsionar("b"));
+        
     }
 }
