@@ -47,7 +47,7 @@ public class Anuncio {
         Double price = getPrice();
         String category = getCategory();
 
-        if (!name.equals("") && !description.equals("") && price >= 0 && !category.equals("")) {
+        if (!name.equals("".trim()) && !description.equals("".trim()) && price >= 0 && !category.equals("".trim())) {
             Anuncio newa = new Anuncio(name, description, price, category);
             String response = newa.toString();
             status = ("Sucefull " + response);
