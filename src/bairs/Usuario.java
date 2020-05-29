@@ -61,8 +61,5 @@ public class Usuario {
             throw new Exception("Elemento não encontrado");   
         --uPosicao;
          } 
-     public void recuperarSenha(){}
-     public void enviarEmail(){}
-     public void verificarCodigo(){}
 }
 
