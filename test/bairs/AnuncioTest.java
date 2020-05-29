@@ -34,4 +34,16 @@ public class AnuncioTest {
         assertEquals(esperado, resultado );
         
     }
+    @Test
+    public void Anuncio1(){
+     String name = "Computador Jogos";
+     String description = "Computador gamer para jogos";
+     Double price = 2500.00;
+     String category = "Informatica";
+        Anuncio PC = new Anuncio(name, description, price, category);
+        String resultado = PC.impulsionar("p");
+        String esperado = "Impulsionamento "+ "Premium" +" "+ "15%" +" "+ "14 dias" ;
+        assertEquals(esperado, resultado );
+        
+    }
 }
