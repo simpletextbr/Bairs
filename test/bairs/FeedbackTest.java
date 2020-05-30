@@ -23,7 +23,7 @@ public class FeedbackTest {
         f.setComentario(comentario);
         
         String resultado = f.aplicarFeedback(avaliacao, comentario);
-        
+     
         String resultadoEsperado ="Feedback{" + "ID=" + f.getID() + ", avaliacao=" + 5 + ", comentario=" + "Teste do Deniboy" + '}';
         assertEquals(resultadoEsperado,resultado);
 

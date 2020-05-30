@@ -13,55 +13,88 @@ import java.util.Calendar;
  */
 public class Usuario {
     private String nomeCompleto;
-    private Double CPF;
+    private String CPF;
     private Calendar dataNascimento;
     private String email;
     private String usuario;
     private String senha;
     private Double codigoVerificacao;
 
-     public void cadastrarUsuario(String nomeCompleto, Double CPF, Calendar dataNascimento, String email, String usuario, String senha) {
+    public Usuario(String nomeCompleto, String CPF, Calendar dataNascimento, String email, String usuario, String senha) {
         this.nomeCompleto = nomeCompleto;
         this.CPF = CPF;
         this.dataNascimento = dataNascimento;
         this.email = email;
         this.usuario = usuario;
         this.senha = senha;
+    }
 
+    public Usuario(){
+        
+    }
+    
+    
+    
+     public String cadastrarUsuario(String nomeCompleto, String CPF, Calendar dataNascimento, String email, String usuario, String senha) {
+         
+        this.nomeCompleto = nomeCompleto;
+        this.CPF = CPF;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+        this.usuario = usuario;
+        this.senha = senha;
+        Usuario cadastro = new Usuario(nomeCompleto,CPF, dataNascimento,email,usuario,senha);
+        return cadastro.toString();
 
     }
-     public String entrar(String usuario, String senha){
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "nomeCompleto=" + nomeCompleto + ", CPF=" + CPF + ", dataNascimento=" + dataNascimento + ", email=" + email + ", usuario=" + usuario + ", senha=" + senha + '}';
+    }
+    
+     public Boolean entrar(String usuario, String senha){
+        this.usuario = usuario;
+        this.senha = senha; 
         if(this.usuario.equals(usuario) && this.senha.equals(senha))
-            return "Sucesso";
+            return true;
         else
-            return "Usuario ou senha incorretos";
+            return false;
     }
-     public String entrarFacebook(String email, String senha){
+     public Boolean entrarFacebook(String email, String senha){
+         this.email = email;
+         this.senha = senha;
         if(this.email.equals(email) && this.senha.equals(senha))
-            return "Sucesso";
+            return true;
         else
-            return "Usuario ou senha incorretos";
+            return false;
     }
-     public String entrarGoogle(String email, String senha){
+     public Boolean entrarGoogle(String email, String senha){
+         this.email = email;
+         this.senha = senha;
         if(this.email.equals(email) && this.senha.equals(senha))
-            return "Sucesso";
+            return true;
         else
-            return "Usuario ou senha incorretos";
+            return false;
     }
-     public void excluir(Double CPF) throws Exception{
-       int uPosicao= -1;
-        int p = -1;
-        if (uPosicao == -1)
-            throw new Exception ("Lista Vazia");
+     public Boolean excluir(String CPF) throws Exception{
+        this.CPF = CPF;
+       int uPosicao= 1;
+        int p = 1;
+      //  if (uPosicao == -1){
+       //     throw new Exception ("Lista Vazia");
+            
         for (int i=0;i<=uPosicao;++i){
-            if (this.CPF == CPF){
+            if (this.CPF.equals(CPF)){
                 p=i;
-                break;
+                return true;
             }
         }
-        if (p==-1)
-            throw new Exception("Elemento não encontrado");   
-        --uPosicao;
+        return false;
+        //if (p==-1)
+          //  throw new Exception("Elemento não encontrado");   
+        //--uPosicao;
+        
          } 
 }
 
