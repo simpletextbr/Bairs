@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author CLIENTE
+ * @author Thiago
  */
 public class UsuarioTest {
     
