@@ -13,34 +13,33 @@ import java.util.Random;
  * @author Dênis
  */
 public class Feedback {
-    
-    private Random ID = new Random();
+
+    private Random r = new Random();
+    private Integer ID;
     private Integer avaliacao;
     private String comentario;
 
     //Metodo construtor
-    public Feedback(Integer avaliacao, String comentario) {
-        getID();
+    public Feedback(Integer ID,Integer avaliacao, String comentario) {
+        this.ID = ID;
         setAvaliacao(avaliacao);
         setComentario(comentario);
-        
+
+    }
+
+    public Feedback() {
     }
     
-    public Random getID() {
-         ID.nextInt(100);
-        return ID;
-    }
-
-    @Override
-    public String toString() {
-        return "Feedback{" + "comentario=" + comentario + '}';
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 37 * hash + Objects.hashCode(this.comentario);
         return hash;
+    }
+
+    @Override
+    public String toString() {
+        return "Feedback{" + "ID=" + ID + ", avaliacao=" + avaliacao + ", comentario=" + comentario + '}';
     }
 
     @Override
@@ -58,9 +57,24 @@ public class Feedback {
         if (!Objects.equals(this.comentario, other.comentario)) {
             return false;
         }
+        if (!Objects.equals(this.avaliacao, other.avaliacao)) {
+            return false;
+        }
         return true;
     }
-    
+
+    /**
+     * @return the ID
+     */
+    public Integer getID() {
+        return ID;
+    }
+    /**
+     * @param ID the ID to set
+     */
+    public void setID() {
+    this.ID = r.nextInt(100);
+    }
     /**
      * @return the avaliacao
      */
@@ -72,8 +86,8 @@ public class Feedback {
      * @param avaliacao the avaliacao to set
      */
     public void setAvaliacao(Integer avaliacao) {
-        
-        if (avaliacao < 1 || avaliacao > 5 ) {
+
+        if (avaliacao < 1 || avaliacao > 5) {
             throw new IndexOutOfBoundsException("Avaliação permitida: 1 a 5");
         }
         this.avaliacao = avaliacao;
@@ -90,20 +104,27 @@ public class Feedback {
      * @param comentario the comentario to set
      */
     public void setComentario(String comentario) {
-        
-        if (comentario.trim().length() <5) {
+
+        if (comentario.trim().length() < 5) {
             throw new IndexOutOfBoundsException("Digite pelo menos 5 caracteres");
         }
-        
+
         if (comentario.trim().length() > 500) {
             throw new IndexOutOfBoundsException("Limite de 500 caracteres");
         }
         this.comentario = comentario;
     }
 
-    public void aplicarFeedback(Integer avaliacao, String comentario ) {
+    public String aplicarFeedback(Integer avaliacao, String comentario) {
+        setID();
+        Integer ID = getID();
+        String status;
         
-        Feedback aplicaFeedback = new Feedback(avaliacao,comentario);
-        
+        if (avaliacao.equals("".trim()) || comentario.trim().isEmpty()) {
+            status = ("Erro!!! Os campos não podem ficar vazios");
+            return status;
+        }
+        Feedback aplicaFeedback = new Feedback(ID,avaliacao,comentario);
+        return aplicaFeedback.toString();
     }
 }
