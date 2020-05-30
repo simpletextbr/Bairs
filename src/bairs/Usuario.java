@@ -27,6 +27,8 @@ public class Usuario {
         this.email = email;
         this.usuario = usuario;
         this.senha = senha;
+
+
     }
      public String entrar(String usuario, String senha){
         if(this.usuario.equals(usuario) && this.senha.equals(senha))
